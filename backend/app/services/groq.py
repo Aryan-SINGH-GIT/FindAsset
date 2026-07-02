@@ -5,7 +5,7 @@ from app.schemas.models import Scene, VisualKeywords
 from app.utils.rate_limiter import groq_limiter, with_retry
 
 client = AsyncGroq(api_key=os.environ.get("GROQ_API_KEY"))
-MODEL_NAME = "llama-3.3-70b-versatile"
+MODEL_NAME = "qwen/qwen3.6-27b"
 
 @with_retry()
 async def split_scenes(script: str) -> list[Scene]:
